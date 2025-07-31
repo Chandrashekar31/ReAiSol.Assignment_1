@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ReAiSol Landing Page</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #fff;
+      padding: 1.5rem 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #0077cc;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+    }
+
+    .hero {
+      position: relative;
+      text-align: center;
+      color: #fff;
+      padding: 6rem 2rem;
+      background: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+    .cta-btn {
+      background-color: #fff;
+      color: #0077cc;
+      padding: 0.9rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .cta-btn:hover {
+      background: #e6f3ff;
+    }
+
+    #consultation {
+      padding: 3rem 2rem;
+      background-color: #fff;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    form label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: bold;
+    }
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 0.7rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    form input[type="checkbox"] {
+      width: auto;
+      margin-right: 0.5rem;
+    }
+    .form-checkbox {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+    .submit-btn {
+      background-color: #0077cc;
+      color: #fff;
+      padding: 0.9rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .submit-btn:hover {
+      background: #005fa3;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      nav a { display: block; margin: 0.5rem 0; }
+      header { flex-direction: column; align-items: flex-start; }
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">ReAiSol</div>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+      <a href="#footer-contact">Contact</a>
+
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Request a Consultation</h1>
+      <p>One stop solution for all your business needs</p>
+      <a href="#consultation"><button class="cta-btn">Get Started</button></a>
+    </div>
+  </section>
+
+  <section id="consultation">
+    <h2 style="text-align: center; margin-bottom: 2rem;">Consultation Request Form</h2>
+    <form>
+      <label>Company Name</label>
+      <input type="text" name="companyName" required>
+
+      <label>Contact Person Name</label>
+      <input type="text" name="contactName" required>
+
+      <label>Email Address</label>
+      <input type="email" name="email" required>
+
+      <label>Phone Number</label>
+      <input type="tel" name="phone" required>
+
+      <label>Service Interested In</label>
+      <select name="service" required>
+        <option value="">-- Select a Service --</option>
+        <option>Web Development</option>
+        <option>Cloud & DevOps</option>
+        <option>Mobile App Development</option>
+        <option>Data Engineering</option>
+        <option>AI/ML Services</option>
+      </select>
+
+      <label>Budget Range</label>
+      <select name="budget" required>
+        <option value="">-- Select Budget --</option>
+        <option>₹1,00,000 - ₹2,00,000</option>
+        <option>₹2,00,000 - ₹3,00,000</option>
+        <option>More than ₹5,00,000</option>
+      </select>
+
+      <label>Project Timeline</label>
+      <input type="text" name="timeline" placeholder="e.g., 3 months / ASAP">
+
+      <label>How did you hear about us?</label>
+      <input type="text" name="referral" placeholder="Google, Friend, LinkedIn, etc.">
+
+      <label>Project Description</label>
+      <textarea name="description" required></textarea>
+
+      <label>Project Documents (Optional)</label>
+      <input type="file" name="documents">
+
+      <div class="form-checkbox">
+      <input type="checkbox" required>
+      <label>I agree to the 
+        <a href="#" onclick="openTermsModal(event)">Privacy Policy</a> & 
+        <a href="#" onclick="openTermsModal(event)">Terms and Conditions</a>
+      </label>
+    </div>
+
+
+      <button type="submit" class="submit-btn">Request Consultation</button>
+    </form>
+  </section>
+
+  <!-- Integrated Footer -->
+  <footer id="footer-contact" style="background-color: #1e2235; color: #ccc; padding: 3rem 2rem;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem;">
+      <div style="flex: 1 1 250px;">
+        <h2 style="color: #fff; font-size: 1.5rem;"><span style="color: #fff;">ReAi</span><span style="color:#a78bfa;">Sol</span></h2>
+        <p style="margin-top: 1rem; line-height: 1.6;">
+          Innovative AI solutions tailored to transform your business processes and drive growth through intelligent automation.
+        </p>
+      </div>
+
+      <div style="flex: 1 1 180px;">
+        <h3 style="color: #fff; margin-bottom: 1rem;">Quick Links</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="#features" style="color: #ccc; text-decoration: none;">Services</a></li>
+          <li><a href="#portfolio" style="color: #ccc; text-decoration: none;">Portfolio</a></li>
+          <li><a href="#about" style="color: #ccc; text-decoration: none;">About Us</a></li>
+          <li><a href="#consultation" style="color: #ccc; text-decoration: none;">Contact</a></li>
+          <li><a href="#blog" style="color: #ccc; text-decoration: none;">Blog</a></li>
+        </ul>
+      </div>
+
+      <div style="flex: 1 1 250px;">
+        <h3 style="color: #fff; margin-bottom: 1rem;">Contact Us</h3>
+        <p style="margin: 0.5rem 0;">📍 123 AI Boulevard, Tech City, TC 10101</p>
+        <p style="margin: 0.5rem 0;">📞 +1 (555) 234-5678</p>
+        <p style="margin: 0.5rem 0;">✉️ info@reaisol.com</p>
+      </div>
+
+      <div style="flex: 1 1 250px;">
+        <h3 style="color: #fff; margin-bottom: 1rem;">Newsletter</h3>
+        <p>Subscribe to our newsletter for the latest AI insights and company updates.</p>
+        <form style="display: flex; margin-top: 1rem;">
+          <input type="email" placeholder="Your email address" style="padding: 0.6rem; flex: 1; border: none; border-radius: 4px 0 0 4px;"/>
+          <button type="submit" style="background: #7c3aed; border: none; padding: 0 1rem; color: #fff; border-radius: 0 4px 4px 0; cursor: pointer;">
+            ➤
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div style="margin-top: 2rem; border-top: 1px solid #333; padding-top: 1.5rem; text-align: center;">
+      <p>© 2025 ReAiSol. All rights reserved.</p>
+      <div style="margin-top: 1rem;">
+        <a href="#" style="color: #ccc; margin: 0 0.5rem;">LinkedIn</a> |
+        <a href="#" style="color: #ccc; margin: 0 0.5rem;">Twitter</a> |
+        <a href="#" style="color: #ccc; margin: 0 0.5rem;">Facebook</a> |
+        <a href="#" style="color: #ccc; margin: 0 0.5rem;">Instagram</a>
+      </div>
+    </div>
+  </footer>
+<!-- Terms & Conditions Modal -->
+<div id="termsModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.6); z-index:9999;">
+  <div style="background-color:#fff; margin:10% auto; padding:2rem; border-radius:8px; width:90%; max-width:600px; position:relative;">
+    <span onclick="closeTermsModal()" style="position:absolute; top:10px; right:20px; font-size:1.5rem; cursor:pointer;">&times;</span>
+    <h2>Terms and Conditions</h2>
+    <ul style="margin-top:1rem; line-height:1.6;">
+      <li>We maintain complete client confidentiality.</li>
+      <li>Projects start after a signed agreement.</li>
+      <li>Timeline and delivery terms must be mutually agreed in writing.</li>
+      <li>Budget revisions post-approval must be mutually discussed.</li>
+      <li>Intellectual property remains with the client after final payment.</li>
+      <li>Clients are responsible for providing timely feedback and inputs.</li>
+    </ul>
+  </div>
+</div>
+<script>
+  function openTermsModal(event) {
+    if (event) event.preventDefault(); // Stops the page from scrolling
+    document.getElementById('termsModal').style.display = 'block';
+  }
+
+  function closeTermsModal() {
+    document.getElementById('termsModal').style.display = 'none';
+  }
+
+  // Optional: Close modal when clicking outside
+  window.onclick = function(event) {
+    const modal = document.getElementById('termsModal');
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+
+</body>
+</html>
+
+
+
+
